@@ -1,65 +1,46 @@
-"use client";
-
-import { useState } from "react";
-
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Message send ho gaya 👍");
-
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
-
   return (
-    <div style={{ padding: "30px", maxWidth: "500px", margin: "auto" }}>
-      <h1>Contact Us</h1>
+    <main style={{ padding: "40px", textAlign: "center" }}>
+      <h1>Contact Us 📩</h1>
 
-      {/* 🔥 Only Email */}
-      <div style={{ marginBottom: "20px" }}>
-        <p><b>Email:</b> mobinest@gmail.com</p>
+      <p>If you have any questions, feel free to contact us.</p>
+
+      <div style={{ marginTop: "20px" }}>
+        <p>📧 Email: support@mobinest.com</p>
+        <p>📞 Phone: +971 000 0000</p>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form style={{ marginTop: "30px" }}>
         <input
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          type="text"
+          placeholder="Your Name"
+          style={{ padding: "10px", margin: "5px", width: "250px" }}
         />
+        <br />
 
         <input
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          type="email"
+          placeholder="Your Email"
+          style={{ padding: "10px", margin: "5px", width: "250px" }}
         />
+        <br />
 
         <textarea
-          placeholder="Message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+          placeholder="Your Message"
+          style={{ padding: "10px", margin: "5px", width: "250px", height: "100px" }}
         />
+        <br />
 
-        <button
-          type="submit"
-          style={{
-            padding: "10px 20px",
-            background: "black",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Send
+        <button style={{
+          padding: "10px 20px",
+          background: "black",
+          color: "white",
+          border: "none",
+          marginTop: "10px"
+        }}>
+          Send Message
         </button>
       </form>
-    </div>
+    </main>
   );
 }
